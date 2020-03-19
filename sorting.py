@@ -31,12 +31,12 @@ def unhighlight_all():
 index = 0
 
 
-def tick():
+def tick(win, width, height):
     global index
 
     if index >= len(array):
         unhighlight_all()
-        return
+        return False
 
     min_index = index
     for k in range(index, len(array)):
@@ -44,9 +44,10 @@ def tick():
             min_index = k
 
     unhighlight_all()
-    swap(index, min_index)
     highlight(index)
     highlight(min_index)
+    draw(win, width, height)
+    swap(index, min_index)
 
     index += 1
 

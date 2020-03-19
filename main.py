@@ -33,6 +33,6 @@ while running:
             running = False
 
     clear()
-    sorting.tick()
-    sorting.draw(win, width, height)
+    if not sorting.tick(win, width, height):
+        sorting.draw(win, width, height)
     update()
