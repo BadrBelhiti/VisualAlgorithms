@@ -1,5 +1,6 @@
 import pygame
 import sorting
+import tree
 
 pygame.init()
 
@@ -25,6 +26,8 @@ def update():
 tps = 20
 running = True
 
+tree.init()
+
 while running:
     pygame.time.delay(1000 // tps)
 
@@ -33,6 +36,7 @@ while running:
             running = False
 
     clear()
-    if not sorting.tick(win, width, height):
-        sorting.draw(win, width, height)
+    # if not sorting.tick(win, width, height):
+        # sorting.draw(win, width, height)
+    tree.draw(win, width, height)
     update()
