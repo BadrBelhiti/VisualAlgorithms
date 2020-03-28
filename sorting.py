@@ -57,17 +57,6 @@ def reset():
     random.shuffle(array)
     index = 0
 
-
-def sort():
-    for i in range(len(array)):
-        min_index = i
-        for j in range(i, len(array)):
-            if array[min_index] > array[j]:
-                min_index = j
-        pygame.time.delay(50)
-        swap(i, min_index)
-
-
 def swap(i, j):
     temp = array[i]
     array[i] = array[j]
